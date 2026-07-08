@@ -1,0 +1,9 @@
+[submodule "Syuan.Account"]
+	path = Syuan.Account
+	url = git@github.com:SyuanTsai/Account.git
+[submodule "Syuan.FinancialData"]
+	path = Syuan.FinancialData
+	url = git@github.com:SyuanTsai/FinancialData.git
+[submodule "Github.Io"]
+	path = Github.Io
+	url = git@github.com:SyuanTsai/SyuanTsai.github.io.git
