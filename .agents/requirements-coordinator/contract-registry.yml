@@ -1,12 +1,12 @@
 version: 1
 description: >
-  Workspace-level registry of shared contracts. Use this before reading service
-  repositories broadly. A requirement touching one of these contracts should
-  only inspect the declared owners, producers, consumers, or participants first.
+  共用 contract 的 workspace 層級註冊表。需求碰到某個 contract 時，
+  應優先檢查這裡宣告的 owner、producer、consumer 或 participant，
+  不要直接大範圍讀取所有服務 repository。
 
 contracts: []
 
-# Example:
+# 範例：
 # contracts:
 #   - id: invoice.created
 #     type: event
@@ -29,8 +29,8 @@ contracts: []
 #     compatibility:
 #       mode: backward_compatible
 #       notes:
-#         - Do not remove or rename existing fields without a migration plan.
+#         - 不要在沒有 migration plan 的情況下移除或重新命名既有欄位。
 #     review_checks:
-#       - Producer and consumers agree on required fields.
-#       - New fields are optional unless all consumers are updated.
-#       - Retry and idempotency behavior is documented.
+#       - Producer 與 consumer 需要同意 required fields。
+#       - 除非所有 consumer 都已更新，否則新增欄位應該保持 optional。
+#       - Retry 與 idempotency 行為需要被記錄。

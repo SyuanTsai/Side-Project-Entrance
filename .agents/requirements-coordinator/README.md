@@ -1,40 +1,34 @@
 # Requirements Coordinator
 
-This folder contains the routing data used by
-`requirements-coordinator-agent`.
+這個資料夾保存 `requirements-coordinator-agent` 使用的需求路由資料。
 
-The design avoids reading every service `README.md` on every request. Instead,
-the agent should use these lightweight indexes first, then read only the
-minimum required files for candidate services.
+這個設計的目的，是避免 agent 每次處理需求時都讀取所有服務的 `README.md`。agent 應該優先使用這些輕量索引，再只讀取候選服務的最小必要文件。
 
-## Files
+## 檔案
 
-- `service-index.yml`: Workspace-level routing table for services and repos.
-- `contract-registry.yml`: Workspace-level registry of shared contracts.
-- `service-manifest.template.yml`: Optional per-service manifest template.
+- `service-index.yml`：workspace 層級的服務 / repo 路由表。
+- `contract-registry.yml`：workspace 層級的共用契約註冊表。
+- `service-manifest.template.yml`：每個服務可選用的 manifest 範本。
 
-## Recommended Per-Service File
+## 建議的服務內檔案
 
-Each service can optionally add this file at its own root:
+每個服務可以選擇在自己的根目錄加入：
 
 ```text
 .requirements-agent.yml
 ```
 
-That file should describe the service's responsibility boundary, dependencies,
-contracts, and requirement document entrypoints. It lets the coordinator avoid
-falling back to broad README scans.
+這個檔案用來描述服務的責任邊界、依賴、契約與需求文件入口。它能讓 coordinator 避免 fallback 到大範圍 README 掃描。
 
-## Refresh Strategy
+## 更新策略
 
-Update the index when:
+以下情況建議更新 index：
 
-- A new service or repo is added.
-- A service changes ownership of a domain concept or data entity.
-- A service adds, removes, or changes an API.
-- A service adds, removes, or changes an event.
-- Requirement document locations change.
-- A shared contract changes.
+- 新增服務或 repo。
+- 某個服務改變領域概念或資料實體的 ownership。
+- 某個服務新增、移除或修改 API。
+- 某個服務新增、移除或修改 event。
+- 需求文件位置改變。
+- 共用 contract 改變。
 
-For normal requirement work, prefer routing through the existing index and
-registry rather than rebuilding them.
+一般需求處理時，優先透過既有 index 與 registry 路由，不要預設重建整份索引。

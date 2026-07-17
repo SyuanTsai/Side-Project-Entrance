@@ -1,8 +1,7 @@
 version: 1
 description: >
-  Workspace-level routing index for requirements-coordinator-agent.
-  Keep this file lightweight. It should help route requirements without reading
-  every README or scanning every repository on each request.
+  requirements-coordinator-agent 使用的 workspace 層級路由索引。
+  這份檔案應該保持輕量，用來協助需求路由，避免每次都讀取所有 README 或掃描所有 repository。
 
 index_policy:
   default_behavior: route_first
@@ -13,9 +12,41 @@ index_policy:
     - readme_listed_as_entrypoint
     - user_explicitly_requests_readme_inspection
 
-services: []
+services:
+  - id: Syuan.Account
+    path: Syuan.Account
+    type: service
+    status: active
+    domains:
+      - auth
+      - account
+    requirement_entrypoints:
+      - docs/requirements/auth-login.md
+    manifest: ""
+    last_indexed:
+      commit: ""
+      updated_at: ""
+      source_hash: ""
 
-# Example:
+  - id: Syuan.FinancialData
+    path: Syuan.FinancialData
+    type: service
+    status: active
+    domains:
+      - financial-data
+      - reference-data
+      - exchange-rates
+    owns_data:
+      - bank_exchange_rate
+    requirement_entrypoints:
+      - docs/requirements/financial-reference-data.md
+    manifest: ""
+    last_indexed:
+      commit: ""
+      updated_at: ""
+      source_hash: ""
+
+# 範例：
 # services:
 #   - id: billing-api
 #     path: services/billing-api
@@ -48,7 +79,7 @@ services: []
 #     downstream_services:
 #       - notification-worker
 #     review_focus:
-#       - invoice state transitions
+#       - invoice 狀態轉換
 #       - payment idempotency
 #       - backward-compatible API changes
 #     last_indexed:

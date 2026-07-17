@@ -36,14 +36,14 @@ indexing:
   last_reviewed_at: ""
   notes: []
 
-# Example:
+# 範例：
 # service:
 #   id: billing-api
 #   name: Billing API
 #   type: microservice
 # responsibility:
 #   owns:
-#     - invoice creation and invoice state transitions
+#     - invoice 建立與 invoice 狀態轉換
 #   does_not_own:
 #     - user identity verification
 # domains:
@@ -66,4 +66,4 @@ indexing:
 #   entrypoints:
 #     - docs/requirements.md
 #   review_focus:
-#     - invoice state changes remain backward compatible
+#     - invoice 狀態變更需要維持 backward compatible
