@@ -7,3 +7,12 @@
 [submodule "Github.Io"]
 	path = Github.Io
 	url = git@github.com:SyuanTsai/SyuanTsai.github.io.git
+[submodule "Syuan.CICD.Workflows"]
+	path = Syuan.CICD.Workflows
+	url = git@github.com:SyuanTsai/CICD-Workflows.git
+[submodule "Syuan.FinanceManagement.UI"]
+	path = Syuan.FinanceManagement.UI
+	url = git@github.com:SyuanTsai/Syuan.FinanceManagement.UI.git
+[submodule "Syuan.FinanceManagement"]
+	path = Syuan.FinanceManagement
+	url = git@github.com:SyuanTsai/FinanceManagement.git
