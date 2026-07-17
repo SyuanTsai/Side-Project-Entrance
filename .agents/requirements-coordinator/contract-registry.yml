@@ -1,0 +1,36 @@
+version: 1
+description: >
+  Workspace-level registry of shared contracts. Use this before reading service
+  repositories broadly. A requirement touching one of these contracts should
+  only inspect the declared owners, producers, consumers, or participants first.
+
+contracts: []
+
+# Example:
+# contracts:
+#   - id: invoice.created
+#     type: event
+#     domain: billing
+#     owner_service: billing-api
+#     producers:
+#       - billing-api
+#     consumers:
+#       - notification-worker
+#       - accounting-sync
+#     schema_entrypoints:
+#       - services/billing-api/events/invoice-created.schema.json
+#     fields:
+#       - invoice_id
+#       - customer_id
+#       - amount
+#       - currency
+#       - status
+#       - created_at
+#     compatibility:
+#       mode: backward_compatible
+#       notes:
+#         - Do not remove or rename existing fields without a migration plan.
+#     review_checks:
+#       - Producer and consumers agree on required fields.
+#       - New fields are optional unless all consumers are updated.
+#       - Retry and idempotency behavior is documented.

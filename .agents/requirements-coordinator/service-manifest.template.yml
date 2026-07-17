@@ -1,0 +1,69 @@
+version: 1
+service:
+  id: ""
+  name: ""
+  type: ""
+  status: active
+
+responsibility:
+  owns:
+    - ""
+  does_not_own:
+    - ""
+
+domains: []
+
+owned_data: []
+
+contracts:
+  exposed_apis: []
+  consumed_apis: []
+  produced_events: []
+  consumed_events: []
+  shared_models: []
+
+dependencies:
+  upstream_services: []
+  downstream_services: []
+
+requirements:
+  entrypoints: []
+  decision_records: []
+  review_focus: []
+
+indexing:
+  readme_is_entrypoint: false
+  last_reviewed_at: ""
+  notes: []
+
+# Example:
+# service:
+#   id: billing-api
+#   name: Billing API
+#   type: microservice
+# responsibility:
+#   owns:
+#     - invoice creation and invoice state transitions
+#   does_not_own:
+#     - user identity verification
+# domains:
+#   - billing
+# owned_data:
+#   - invoice
+# contracts:
+#   exposed_apis:
+#     - billing.create_invoice
+#   consumed_apis:
+#     - identity.get_user
+#   produced_events:
+#     - invoice.created
+# dependencies:
+#   upstream_services:
+#     - identity-api
+#   downstream_services:
+#     - notification-worker
+# requirements:
+#   entrypoints:
+#     - docs/requirements.md
+#   review_focus:
+#     - invoice state changes remain backward compatible

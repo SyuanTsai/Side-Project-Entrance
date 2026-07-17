@@ -1,0 +1,57 @@
+version: 1
+description: >
+  Workspace-level routing index for requirements-coordinator-agent.
+  Keep this file lightweight. It should help route requirements without reading
+  every README or scanning every repository on each request.
+
+index_policy:
+  default_behavior: route_first
+  avoid_full_workspace_scan: true
+  read_readme_only_when:
+    - service_manifest_missing
+    - index_entry_stale
+    - readme_listed_as_entrypoint
+    - user_explicitly_requests_readme_inspection
+
+services: []
+
+# Example:
+# services:
+#   - id: billing-api
+#     path: services/billing-api
+#     type: microservice
+#     status: active
+#     domains:
+#       - billing
+#       - invoices
+#       - payments
+#     owns_data:
+#       - invoice
+#       - payment_intent
+#     exposed_apis:
+#       - id: billing.create_invoice
+#         method: POST
+#         path: /invoices
+#     consumed_apis:
+#       - id: identity.get_user
+#     produced_events:
+#       - invoice.created
+#     consumed_events:
+#       - user.created
+#     requirement_entrypoints:
+#       - docs/requirements.md
+#     contract_entrypoints:
+#       - openapi.yml
+#     manifest: .requirements-agent.yml
+#     upstream_services:
+#       - identity-api
+#     downstream_services:
+#       - notification-worker
+#     review_focus:
+#       - invoice state transitions
+#       - payment idempotency
+#       - backward-compatible API changes
+#     last_indexed:
+#       commit: ""
+#       updated_at: ""
+#       source_hash: ""
