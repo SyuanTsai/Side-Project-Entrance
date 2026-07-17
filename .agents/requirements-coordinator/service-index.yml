@@ -20,8 +20,13 @@ services:
     domains:
       - auth
       - account
+      - authorization
+      - access-control
+      - permissions
+      - groups
     requirement_entrypoints:
       - docs/requirements/auth-login.md
+      - docs/requirements/access-control.md
     manifest: ""
     last_indexed:
       commit: ""
@@ -41,6 +46,102 @@ services:
     requirement_entrypoints:
       - docs/requirements/financial-reference-data.md
     manifest: ""
+    last_indexed:
+      commit: ""
+      updated_at: ""
+      source_hash: ""
+
+  - id: Syuan.FinanceManagement
+    path: Syuan.FinanceManagement
+    type: service
+    status: active
+    domains:
+      - finance-management
+      - bookkeeping
+      - accounts
+      - credit-card-bills
+      - e-invoices
+    owns_data:
+      - ledger_entry
+      - financial_account
+      - credit_card_bill
+      - e_invoice
+    requirement_entrypoints:
+      - docs/requirements/finance-management.md
+    manifest: ""
+    last_indexed:
+      commit: ""
+      updated_at: ""
+      source_hash: ""
+
+  - id: Syuan.FinanceManagement.UI
+    path: Syuan.FinanceManagement.UI
+    type: frontend
+    status: active
+    domains:
+      - finance-management-ui
+      - bookkeeping-ui
+      - credit-card-bills-ui
+      - e-invoices-ui
+    requirement_entrypoints:
+      - docs/requirements/ui-project.md
+    manifest: ""
+    upstream_services:
+      - Syuan.FinanceManagement
+      - Syuan.Account
+    last_indexed:
+      commit: ""
+      updated_at: ""
+      source_hash: ""
+
+  - id: Syuan.CICD.Workflows
+    path: Syuan.CICD.Workflows
+    type: tooling
+    status: active
+    domains:
+      - ci
+      - cd
+      - cicd
+      - devops
+      - workflow-yaml
+      - pipeline-workflows
+      - build-workflows
+      - test-workflows
+      - release-workflows
+      - deploy-workflows
+    requirement_entrypoints:
+      - docs/requirements/cicd-workflows.md
+    manifest: ""
+    downstream_services:
+      - Syuan.Account
+      - Syuan.FinancialData
+      - Syuan.FinanceManagement
+      - Syuan.FinanceManagement.UI
+      - Github.Io
+    last_indexed:
+      commit: ""
+      updated_at: ""
+      source_hash: ""
+
+  - id: Github.Io
+    path: Github.Io
+    type: documentation-site
+    status: active
+    domains:
+      - github-pages
+      - technical-blog
+      - project-documentation
+      - project-structure
+      - architecture-notes
+    requirement_entrypoints:
+      - docs/requirements/github-pages-site.md
+    manifest: ""
+    documents_projects:
+      - Syuan.Account
+      - Syuan.FinancialData
+      - Syuan.FinanceManagement
+      - Syuan.FinanceManagement.UI
+      - Syuan.CICD.Workflows
     last_indexed:
       commit: ""
       updated_at: ""
