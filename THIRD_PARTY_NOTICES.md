@@ -10,5 +10,7 @@ licenses:
 - https://github.com/SyuanTsai/Syuan.FinanceManagement.UI.git
 - https://github.com/SyuanTsai/FinanceManagement.git
 
-The submodule URLs and gitlink commits are references only. A root-level
-Apache-2.0 grant cannot relicense those repositories or their contents.
+The submodule URLs and gitlink commits are references only. The root
+[Apache-2.0 grant](LICENSES/Apache-2.0.txt) applies only to the exact
+coordination paths listed in LICENSE-SCOPE.md; it cannot relicense the
+submodule repositories or their contents.
