@@ -1,7 +1,8 @@
-# No additional license
+# License decision record
 
-This file is a rights-boundary record, not a license.
+The earlier no-additional-license state recorded by this file is superseded on
+2026-09-05 by the scoped Apache-2.0 grant in [Apache-2.0.txt](Apache-2.0.txt).
 
-As of 2026-09-05, this branch grants no additional license over the
-coordination root or any submodule. A future Apache-2.0 grant must identify
-the root paths and must exclude all submodule repositories and contents.
+That grant applies only to the exact root coordination paths listed in
+[../LICENSE-SCOPE.md](../LICENSE-SCOPE.md). All submodule repositories and
+their contents remain outside the root grant.
