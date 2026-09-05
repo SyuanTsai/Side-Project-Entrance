@@ -1,13 +1,17 @@
 # License scope
 
-No additional license is granted by this branch.
+The Apache-2.0 text in [LICENSES/Apache-2.0.txt](LICENSES/Apache-2.0.txt) is
+effective only for these exact root coordination paths:
 
-The repository is a coordination root. A possible future Apache-2.0 scope would
-cover only repository-authored coordination files and metadata, including the
-root README, .gitmodules, and the .agents/requirements-coordinator/ files,
-after the owner explicitly authorizes that exact grant.
+- `README.md`
+- `.gitmodules`
+- `.agents/requirements-coordinator.md`
+- `.agents/requirements-coordinator/README.md`
+- `.agents/requirements-coordinator/contract-registry.yml`
+- `.agents/requirements-coordinator/service-index.yml`
+- `.agents/requirements-coordinator/service-manifest.template.yml`
 
-The six submodule paths are separate repositories and are excluded from any
-root license. Their source, history, generated content, and licenses remain
-independent. Empty gitlink entries do not transfer rights into this
-repository.
+The six submodule paths and their gitlink targets are separate repositories.
+Their source, history, generated content, and licenses are excluded from the
+root grant. `.gitignore`, the license and rights-boundary records, and future
+files are also excluded unless separately reviewed and listed.
