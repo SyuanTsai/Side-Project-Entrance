@@ -8,6 +8,7 @@ The reviewed tree contains a short README, .gitmodules, six submodule
 gitlinks, and the requirements-coordinator metadata under .agents. The
 submodule URLs and pinned gitlink commits were checked as separate sources.
 
-No submodule content is included in a root-level license decision. This branch
-records a proposed Apache-2.0 boundary for the root-authored coordination
-material only, but grants no additional license until explicitly authorized.
+Owner authorization confirmed on 2026-09-05 applies only to the exact root
+coordination paths listed in LICENSE-SCOPE.md. The branch publishes the
+standard Apache-2.0 text for those paths. No submodule content is included in
+the root license decision.
